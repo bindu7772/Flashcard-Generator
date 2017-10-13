@@ -1,0 +1,23 @@
+{
+  "name": "abc",
+  "version": "1.0.0",
+  "description": "Week 11 homework",
+  "main": "BasicCard.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bindu7772/Flashcard-Generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bindu7772/Flashcard-Generator/issues"
+  },
+  "homepage": "https://github.com/bindu7772/Flashcard-Generator#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "inquirer": "^3.3.0"
+  }
+}
