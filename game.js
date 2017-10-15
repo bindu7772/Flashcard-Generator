@@ -24,16 +24,27 @@ inquirer.prompt([{
                message: 'Please enter the answer of the question.'
            }
             ]).then(function (quesDetails) {
-                console.log(quesDetails);
+               // console.log(quesDetails);
                 var bq = new Basic(quesDetails.bques, quesDetails.bans);
                 fs.readFile("cards.json", "utf8", function (error, data) {
-                    var dataArr = data;
-                    console.log(dataArr);
+                    var dataArr = {Basic:[data]};
+                    dataArr.Basic.push({ Que: quesDetails.bques, Ans: quesDetails.bans });
+                    var json = JSON.stringify(dataArr);
+                    //dataArr = JSON.parse(data);
+                    //dataArr.push(JSON.stringify(bq));
 
                     // If the code experiences any errors it will log the error to the console.
-                    if (err) {
-                        return console.log(err);
+                    if (error) {
+                         console.log(error);
                     }
+
+                    fs.writeFile("cards.json", json,'utf8' ,function (error) {
+
+                        // If the code experiences any errors it will log the error to the console.
+                        if (error) {
+                             console.log(error);
+                        }
+                    });
                 });
             });
     }
